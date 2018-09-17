@@ -511,11 +511,11 @@
   <order>
     <hop>
       <from>Trab Anais</from>
-      <to>TRAB EM ANAIS 2</to>
+      <to>TRAB EM ANAIS</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TRAB EM ANAIS 2</from>
+      <from>TRAB EM ANAIS</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -2048,7 +2048,7 @@
     </GUI>
   </step>
   <step>
-    <name>TRAB EM ANAIS 2</name>
+    <name>TRAB EM ANAIS</name>
     <type>Calculator</type>
     <description />
     <distribute>Y</distribute>

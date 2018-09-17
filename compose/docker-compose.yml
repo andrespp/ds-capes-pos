@@ -1,0 +1,39 @@
+##
+# Andre Pereira
+# 2018-09-16
+#
+
+version: '3.5'
+
+services:
+  capesdb:
+    container_name: capesdb
+    image: postgres:10
+    restart: always
+    networks:
+      - frontend
+    ports:
+      - "5433:5432"
+    volumes:
+     - ./data/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: capesdb
+      POSTGRES_USER: capesdb_user
+      POSTGRES_PASSWORD: c4pes
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    networks:
+      - frontend
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/pgadmin:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user
+      PGADMIN_DEFAULT_PASSWORD: pass
+
+networks:
+  frontend:
+    name: capedb_net

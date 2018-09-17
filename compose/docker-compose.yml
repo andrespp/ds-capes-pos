@@ -36,4 +36,4 @@ services:
 
 networks:
   frontend:
-    name: capedb_net
+    name: capesdb_net

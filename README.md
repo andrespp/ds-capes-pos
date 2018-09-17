@@ -95,7 +95,7 @@ Carregar a base
 
 ```bash
 $ cd ds-capes-pos
-$ docker container run --rm -v $(pwd):/jobs andrespp/pdi \
+$ docker container run --network capesdb_net --rm -v $(pwd):/jobs andrespp/pdi \
 	runj Jobs/load_dataset.kjb
 ```
 

@@ -554,6 +554,11 @@
       <to>FATO_PRODUCAO</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>switch table</from>
+      <to>UFPA_EVALUATION</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Data Grid</name>
@@ -591,6 +596,9 @@
       </line>
       <line>
         <item>FATO_PRODUCAO</item>
+      </line>
+      <line>
+        <item>UFPA_EVALUATION</item>
       </line>
     </data>
     <cluster_schema />
@@ -651,6 +659,208 @@
     <GUI>
       <xloc>416</xloc>
       <yloc>16</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FATO_DISCENTE</name>
+    <type>ExecSQL</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>CAPES DS</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>CREATE TABLE fato_discente
+(
+  AN_BASE BIGINT
+, NM_GRANDE_AREA_CONHECIMENTO TEXT
+, CD_AREA_AVALIACAO BIGINT
+, NM_AREA_AVALIACAO TEXT
+, SG_ENTIDADE_ENSINO TEXT
+, NM_ENTIDADE_ENSINO TEXT
+, CS_STATUS_JURIDICO TEXT
+, DS_DEPENDENCIA_ADMINISTRATIVA TEXT
+, NM_MODALIDADE_PROGRAMA TEXT
+, NM_GRAU_PROGRAMA TEXT
+, CD_PROGRAMA_IES TEXT
+, NM_PROGRAMA_IES TEXT
+, NM_REGIAO TEXT
+, SG_UF_PROGRAMA TEXT
+, NM_MUNICIPIO_PROGRAMA_IES TEXT
+, CD_CONCEITO_PROGRAMA BIGINT
+, CD_CONCEITO_CURSO BIGINT
+, ID_PESSOA BIGINT
+, NM_DISCENTE TEXT
+, NM_PAIS_NACIONALIDADE_DISCENTE TEXT
+, DS_TIPO_NACIONALIDADE_DISCENTE TEXT
+, TP_SEXO_DISCENTE TEXT
+, DS_FAIXA_ETARIA TEXT
+, DS_GRAU_ACADEMICO_DISCENTE TEXT
+, ST_INGRESSANTE TEXT
+, NM_SITUACAO_DISCENTE TEXT
+, DT_MATRICULA_DISCENTE TEXT
+, DT_SITUACAO_DISCENTE TEXT
+, QT_MES_TITULACAO BIGINT
+, NM_TESE_DISSERTACAO TEXT
+, NM_ORIENTADOR TEXT
+, ID_ADD_FOTO_PROGRAMA BIGINT
+, ID_ADD_FOTO_PROGRAMA_IES BIGINT
+)
+;</sql>
+    <set_params>N</set_params>
+    <insert_field />
+    <update_field />
+    <delete_field />
+    <read_field />
+    <arguments>
+    </arguments>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FATO_DOCENTE</name>
+    <type>ExecSQL</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>CAPES DS</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>CREATE TABLE fato_docente
+(
+  AN_BASE BIGINT
+, CD_AREA_AVALIACAO BIGINT
+, NM_AREA_AVALIACAO TEXT
+, NM_GRANDE_AREA_CONHECIMENTO TEXT
+, NM_AREA_CONHECIMENTO TEXT
+, CD_PROGRAMA_IES TEXT
+, NM_PROGRAMA_IES TEXT
+, NM_GRAU_PROGRAMA TEXT
+, NM_MODALIDADE_PROGRAMA TEXT
+, CD_CONCEITO_PROGRAMA BIGINT
+, SG_ENTIDADE_ENSINO TEXT
+, NM_ENTIDADE_ENSINO TEXT
+, DS_DEPENDENCIA_ADMINISTRATIVA TEXT
+, CS_STATUS_JURIDICO TEXT
+, NM_MUNICIPIO_PROGRAMA_IES TEXT
+, SG_UF_PROGRAMA VARCHAR(2)
+, NM_REGIAO TEXT
+, ID_PESSOA BIGINT
+, NM_DOCENTE TEXT
+, TP_SEXO_DOCENTE TEXT
+, DS_FAIXA_ETARIA TEXT
+, DS_TIPO_NACIONALIDADE_DOCENTE TEXT
+, NM_PAIS_NACIONALIDADE_DOCENTE TEXT
+, DS_CATEGORIA_DOCENTE TEXT
+, DS_TIPO_VINCULO_DOCENTE_IES TEXT
+, DS_REGIME_TRABALHO TEXT
+, CD_CAT_BOLSA_PRODUTIVIDADE TEXT
+, IN_DOUTOR TEXT
+, AN_TITULACAO BIGINT
+, NM_GRAU_TITULACAO TEXT
+, CD_AREA_BASICA_TITULACAO BIGINT
+, NM_AREA_BASICA_TITULACAO TEXT
+, SG_IES_TITULACAO TEXT
+, NM_IES_TITULACAO TEXT
+, NM_PAIS_IES_TITULACAO TEXT
+, ID_ADD_FOTO_PROGRAMA BIGINT
+, ID_ADD_FOTO_PROGRAMA_IES BIGINT
+, DS_CLIENTELA_QUADRIENAL_2017 TEXT
+)
+;</sql>
+    <set_params>N</set_params>
+    <insert_field />
+    <update_field />
+    <delete_field />
+    <read_field />
+    <arguments>
+    </arguments>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FATO_PRODUCAO</name>
+    <type>ExecSQL</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>CAPES DS</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>CREATE TABLE fato_producao
+(
+  TIPO TEXT
+, CD_PROGRAMA_IES TEXT
+, NM_PROGRAMA_IES TEXT
+, SG_ENTIDADE_ENSINO TEXT
+, NM_ENTIDADE_ENSINO TEXT
+, AN_BASE_PRODUCAO BIGINT
+, ID_ADD_PRODUCAO_INTELECTUAL BIGINT
+, ID_TIPO_PRODUCAO BIGINT
+, ID_SUBTIPO_PRODUCAO BIGINT
+, NM_CIDADE TEXT
+, DS_IDIOMA TEXT
+)
+;</sql>
+    <set_params>N</set_params>
+    <insert_field />
+    <update_field />
+    <delete_field />
+    <read_field />
+    <arguments>
+    </arguments>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -828,6 +1038,10 @@
         <value>FATO_PRODUCAO</value>
         <target_step>FATO_PRODUCAO</target_step>
       </case>
+      <case>
+        <value>UFPA_EVALUATION</value>
+        <target_step>UFPA_EVALUATION</target_step>
+      </case>
     </cases>
     <cluster_schema />
     <remotesteps>
@@ -843,7 +1057,7 @@
     </GUI>
   </step>
   <step>
-    <name>FATO_DOCENTE</name>
+    <name>UFPA_EVALUATION</name>
     <type>ExecSQL</type>
     <description />
     <distribute>Y</distribute>
@@ -858,46 +1072,26 @@
     <single_statement>N</single_statement>
     <replace_variables>N</replace_variables>
     <quoteString>N</quoteString>
-    <sql>CREATE TABLE fato_docente
+    <sql>CREATE TABLE ufpa_evaluation
 (
-  AN_BASE BIGINT
-, CD_AREA_AVALIACAO BIGINT
-, NM_AREA_AVALIACAO TEXT
-, NM_GRANDE_AREA_CONHECIMENTO TEXT
-, NM_AREA_CONHECIMENTO TEXT
-, CD_PROGRAMA_IES TEXT
-, NM_PROGRAMA_IES TEXT
-, NM_GRAU_PROGRAMA TEXT
-, NM_MODALIDADE_PROGRAMA TEXT
-, CD_CONCEITO_PROGRAMA BIGINT
-, SG_ENTIDADE_ENSINO TEXT
-, NM_ENTIDADE_ENSINO TEXT
-, DS_DEPENDENCIA_ADMINISTRATIVA TEXT
-, CS_STATUS_JURIDICO TEXT
-, NM_MUNICIPIO_PROGRAMA_IES TEXT
-, SG_UF_PROGRAMA VARCHAR(2)
-, NM_REGIAO TEXT
-, ID_PESSOA BIGINT
-, NM_DOCENTE TEXT
-, TP_SEXO_DOCENTE TEXT
-, DS_FAIXA_ETARIA TEXT
-, DS_TIPO_NACIONALIDADE_DOCENTE TEXT
-, NM_PAIS_NACIONALIDADE_DOCENTE TEXT
-, DS_CATEGORIA_DOCENTE TEXT
-, DS_TIPO_VINCULO_DOCENTE_IES TEXT
-, DS_REGIME_TRABALHO TEXT
-, CD_CAT_BOLSA_PRODUTIVIDADE TEXT
-, IN_DOUTOR TEXT
-, AN_TITULACAO BIGINT
-, NM_GRAU_TITULACAO TEXT
-, CD_AREA_BASICA_TITULACAO BIGINT
-, NM_AREA_BASICA_TITULACAO TEXT
-, SG_IES_TITULACAO TEXT
-, NM_IES_TITULACAO TEXT
-, NM_PAIS_IES_TITULACAO TEXT
-, ID_ADD_FOTO_PROGRAMA BIGINT
-, ID_ADD_FOTO_PROGRAMA_IES BIGINT
-, DS_CLIENTELA_QUADRIENAL_2017 TEXT
+  entidade TEXT
+, programa TEXT
+, cd_programa_ies TEXT
+, cd_conceito_programa SMALLINT
+, ano_inicio_programa SMALLINT
+, an_base SMALLINT
+, nr_docentes SMALLINT
+, nr_discentes SMALLINT
+, nr_doutores_titulados SMALLINT
+, nr_mestres_titulados SMALLINT
+, nr_periodicos SMALLINT
+, nr_anais SMALLINT
+, nr_livros SMALLINT
+, nr_produtividade_1a SMALLINT
+, nr_produtividade_1b SMALLINT
+, nr_produtividade_1c SMALLINT
+, nr_produtividade_1d SMALLINT
+, nr_produtividade_2 SMALLINT
 )
 ;</sql>
     <set_params>N</set_params>
@@ -915,132 +1109,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>FATO_DISCENTE</name>
-    <type>ExecSQL</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>CAPES DS</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>CREATE TABLE fato_discente
-(
-  AN_BASE BIGINT
-, NM_GRANDE_AREA_CONHECIMENTO TEXT
-, CD_AREA_AVALIACAO BIGINT
-, NM_AREA_AVALIACAO TEXT
-, SG_ENTIDADE_ENSINO TEXT
-, NM_ENTIDADE_ENSINO TEXT
-, CS_STATUS_JURIDICO TEXT
-, DS_DEPENDENCIA_ADMINISTRATIVA TEXT
-, NM_MODALIDADE_PROGRAMA TEXT
-, NM_GRAU_PROGRAMA TEXT
-, CD_PROGRAMA_IES TEXT
-, NM_PROGRAMA_IES TEXT
-, NM_REGIAO TEXT
-, SG_UF_PROGRAMA TEXT
-, NM_MUNICIPIO_PROGRAMA_IES TEXT
-, CD_CONCEITO_PROGRAMA BIGINT
-, CD_CONCEITO_CURSO BIGINT
-, ID_PESSOA BIGINT
-, NM_DISCENTE TEXT
-, NM_PAIS_NACIONALIDADE_DISCENTE TEXT
-, DS_TIPO_NACIONALIDADE_DISCENTE TEXT
-, TP_SEXO_DISCENTE TEXT
-, DS_FAIXA_ETARIA TEXT
-, DS_GRAU_ACADEMICO_DISCENTE TEXT
-, ST_INGRESSANTE TEXT
-, NM_SITUACAO_DISCENTE TEXT
-, DT_MATRICULA_DISCENTE TEXT
-, DT_SITUACAO_DISCENTE TEXT
-, QT_MES_TITULACAO BIGINT
-, NM_TESE_DISSERTACAO TEXT
-, NM_ORIENTADOR TEXT
-, ID_ADD_FOTO_PROGRAMA BIGINT
-, ID_ADD_FOTO_PROGRAMA_IES BIGINT
-)
-;</sql>
-    <set_params>N</set_params>
-    <insert_field />
-    <update_field />
-    <delete_field />
-    <read_field />
-    <arguments>
-    </arguments>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>FATO_PRODUCAO</name>
-    <type>ExecSQL</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>CAPES DS</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>CREATE TABLE fato_producao
-(
-  TIPO TEXT
-, CD_PROGRAMA_IES TEXT
-, NM_PROGRAMA_IES TEXT
-, SG_ENTIDADE_ENSINO TEXT
-, NM_ENTIDADE_ENSINO TEXT
-, AN_BASE_PRODUCAO BIGINT
-, ID_ADD_PRODUCAO_INTELECTUAL BIGINT
-, ID_TIPO_PRODUCAO BIGINT
-, ID_SUBTIPO_PRODUCAO BIGINT
-, NM_CIDADE TEXT
-, DS_IDIOMA TEXT
-)
-;</sql>
-    <set_params>N</set_params>
-    <insert_field />
-    <update_field />
-    <delete_field />
-    <read_field />
-    <arguments>
-    </arguments>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>224</yloc>
+      <xloc>416</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

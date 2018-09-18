@@ -1,4 +1,5 @@
 dataset/*.csv
 datasrc
 compose/data
+outputs
 *#

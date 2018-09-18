@@ -63,7 +63,7 @@ Distribuição Linux com as seguintes ferramentas instaladas:
 ### Clone do Repositório
 
 ```bash
-$ git clone
+$ git clone https://github.com/andrespp/ds-capes-pos.git
 ```
 
 ### Obtenção do dataset
@@ -73,7 +73,6 @@ $ cd ds-capes-pos
 $ cd dataset
 $ # Download dataset
 $ ./getDataset.sh
-$ ls datasrc/
 ```
 
 ### Servidor PostgreSQL
@@ -85,7 +84,7 @@ $ docker-compose up -d
 
 ### Carregamento da Base
 
-Ajustar o arquivo `kettle.properties` de acordo com o servidor desejado (`localhost` é o padrão)
+Ajustar o arquivo `kettle.properties` de acordo com o servidor desejado (`capesdb` é o padrão)
 
 ```bash
 $ vim ../kettle.properties

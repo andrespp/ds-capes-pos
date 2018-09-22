@@ -1,12 +1,7 @@
-##
-# Andre Pereira
-# 2018-09-16
-#
-
 version: '3.5'
 
 services:
-  capesdb:
+  postgres:
     container_name: capesdb
     image: postgres:10
     restart: always
@@ -22,7 +17,7 @@ services:
       POSTGRES_PASSWORD: c4pes
 
   pgadmin:
-    container_name: pgadmin
+    container_name: capes_pgadmin
     image: dpage/pgadmin4
     networks:
       - frontend
@@ -33,6 +28,21 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: user
       PGADMIN_DEFAULT_PASSWORD: pass
+
+  jupyter:
+    container_name: capes_jnotebook
+    #image: jupyter/datascience-notebook:137a295ff71b
+    build:
+      context: ./jupyter
+      dockerfile: Dockerfile
+    networks:
+     - frontend
+    ports:
+     - "8888:8888"
+    volumes:
+       - ../analysis:/home/jovyan
+    environment:
+      JUPYTER_LAB_ENABLE: "yes"
 
 networks:
   frontend:

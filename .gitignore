@@ -2,4 +2,6 @@ dataset/*.csv
 datasrc
 compose/data
 outputs
+analysis/.*
+compose/jupyter/.*
 *#

@@ -1347,11 +1347,11 @@ ORDER BY CD_PROGRAMA_IES ASC, AN_BASE ASC --MANDATORY</sql>
     <step1>PROGRAMAS</step1>
     <step2>DOCENTES</step2>
     <keys_1>
-      <key>programa</key>
+      <key>cd_programa_ies</key>
       <key>an_base</key>
     </keys_1>
     <keys_2>
-      <key>programa</key>
+      <key>cd_programa_ies</key>
       <key>an_base</key>
     </keys_2>
     <cluster_schema />

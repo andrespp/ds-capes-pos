@@ -10,7 +10,7 @@ setup:
 datasrc:
 	docker-compose run etl datasrc
 
-etl:
+ds:
 	docker-compose run etl dataset
 
 seed:

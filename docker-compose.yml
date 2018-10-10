@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  jupyter:
+    container_name: capes_jnotebook
+    build: analysis
+    networks:
+     - frontend
+    ports:
+     - "8888:8888"
+    volumes:
+       - ./analysis:/home/jovyan/analysis
+       - ./etl:/home/jovyan/etl
+    environment:
+      JUPYTER_LAB_ENABLE: "yes"
+
+networks:
+  frontend:
+    name: capesdb_net

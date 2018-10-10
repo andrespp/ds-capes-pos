@@ -45,18 +45,14 @@ Os _datasets_ utilizados neste repositório são os seguintes:
 
 ## Configuração do Ambiente
 
-Os _datasets_ obtidos foram convertidos para uma base [PostgreSQL](https://www.postgresql.org/) utilizando a ferramenta de [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load) Pentaho Data Integration ([PDI v7.1](https://sourceforge.net/projects/pentaho/files/Data%20Integration/7.1/)).
+O _dataset_ e baixado e convertido automaticamente em arquivos parquet através da imagem docker do projeto.
 
-Para simplificar a implantação do serviço, foi criado uma solução via containers [Docker](https://www.docker.com/what-docker) contendo o servidor PostgreSQL e uma instância do [Pgadmin4](https://www.pgadmin.org/) (cliente)
+A imagem dispõe ainda de ambiente jupyter notebook, onde é possível acessar as análises realizadas.
 
 ### Requisitos
 
 Distribuição Linux com as seguintes ferramentas instaladas:
 
-* GIT
-* Curl
-* wget
-* unzip
 * Docker
 * Docker Compose
 
@@ -68,47 +64,20 @@ $ git clone https://github.com/andrespp/ds-capes-pos.git
 
 ### Obtenção do dataset
 
-```bash
-$ cd ds-capes-pos
-$ cd dataset
-$ # Download dataset
-$ ./getDataset.sh
-```
-
-### Servidor PostgreSQL
+O  _build_ da imagem irá baixar o _dataset_ e converter em arquivos parquet.
 
 ```bash
-$ cd ../compose
-$ docker-compose up -d
+$ docker-compose up
 ```
 
-### Carregamento da Base
+### Análises
 
-Ajustar o arquivo `kettle.properties` de acordo com o servidor desejado (`capesdb` é o padrão)
+Jupyter notebook
 
-```bash
-$ vim ../kettle.properties
-```
-
-Carregar a base
-
-```bash
-$ cd ds-capes-pos
-$ docker container run --network capesdb_net --rm -v $(pwd):/jobs andrespp/pdi \
-	runj Jobs/load_dataset.kjb
-```
-
-## Utilizando o Dataset
-
-Acesse o pgAdmin no seu navegador: `http://localhost`. Login: `user`, senha `pass`
-
-Adicione o servidor da base: `Servers -> Create Server...`. Name: `localhost`, host `capesdb`, port `5432`, username `capesdb_user`, password `c4pes`
-
-Selecione a base de dados `capesdb` e abra a ferramenta de consultas sql: `Tools -> Query Tool`
 
 ## References
 
-* [Anuário estatístico da Previdência Social em 2015](http://www.previdencia.gov.br/wp-content/uploads/2015/08/AEPS-2015-FINAL.pdf)
+* [Protal dados abertos - Capes](https://dadosabertos.capes.gov.br/)
 
 [p1]: https://dadosabertos.capes.gov.br/dataset/coleta-de-dados-programas-da-pos-graduacao-stricto-sensu-no-brasil-2017/resource/8b3464e2-9108-4855-bc5b-2df474fdf152
 [p2]: https://dadosabertos.capes.gov.br/dataset/programas-da-pos-graduacao-stricto-census-do-brasil-de-2013-a-2015/resource/7de14e9c-9739-43d9-8217-ba9bf837b411

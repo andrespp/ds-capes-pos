@@ -67,12 +67,17 @@ $ git clone https://github.com/andrespp/ds-capes-pos.git
 O  _build_ da imagem irá baixar o _dataset_ e converter em arquivos parquet.
 
 ```bash
-$ docker-compose up
+$ make setup
+$ make seed
 ```
 
 ### Análises
 
 Jupyter notebook
+
+```bash
+$ docker-compose up
+```
 
 
 ## References

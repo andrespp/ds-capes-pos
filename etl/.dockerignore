@@ -1,0 +1,9 @@
+*.ypinb
+docker-compose.yml
+README.md
+.gitignore
+.config/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.local/

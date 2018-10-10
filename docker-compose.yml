@@ -11,8 +11,19 @@ services:
     volumes:
        - ./analysis:/home/jovyan/analysis
        - ./etl:/home/jovyan/etl
+       - ./datasrc:/home/jovyan/etl/datasrc
+       - ./dataset:/home/jovyan/etl/dataset
     environment:
       JUPYTER_LAB_ENABLE: "yes"
+
+  etl:
+    container_name: capes_etl
+    build: etl
+    networks:
+     - frontend
+    volumes:
+       - ./datasrc:/usr/src/app/datasrc
+       - ./dataset:/usr/src/app/dataset
 
 networks:
   frontend:

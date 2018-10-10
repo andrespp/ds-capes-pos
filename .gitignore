@@ -1,6 +1,6 @@
 sandbox/
-dataset/*.csv
-datasrc
+dataset/
+datasrc/
 compose/data
 outputs
 analysis/.*

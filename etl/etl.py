@@ -3,13 +3,13 @@ import pyarrow.parquet as pq
 import pandas as pd
 
 print("Hello World!")
-
-df = pd.read_csv("/app/datasrc/br-capes-colsucup-discentes-2017-2018-07-10.csv.gz", \
+src = "br-capes-colsucup-docente-2017-2018-08-10.csv.gz"
+df = pd.read_csv("./datasrc/" + src, \
                     index_col = 0,
                     compression='gzip',
                     sep=';',
                     encoding='iso-8859-1') #,
                     #error_bad_lines=False)
 
-print("bla")
+print("Dataset build. Sample:")
 print(df.head())

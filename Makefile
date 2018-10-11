@@ -7,10 +7,10 @@ setup:
 	docker-compose pull
 	docker-compose build
 
-datasrc:
+datasrc: etl/entrypoint.sh
 	docker-compose run etl datasrc
 
-ds:
+dataset: etl/etl.py
 	docker-compose run etl dataset
 
 seed:

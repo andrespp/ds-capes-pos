@@ -5,10 +5,7 @@ set -e
 
 datasrc() {
 	echo Retrieving datasrc, may take a while $@
-	cd datasrc/
-	wget -nv https://dadosabertos.capes.gov.br/dataset/57f86b23-e751-4834-8537-e9d33bd608b6/resource/d918d02e-7180-4c7c-be73-980f9a8c09b5/download/br-capes-colsucup-docente-2017-2018-08-10.csv
-	gzip -f *.csv
-	cd /usr/src/app
+	python extract.py
 }
 
 dataset() {

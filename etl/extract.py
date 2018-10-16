@@ -43,9 +43,9 @@ def md5(fname):
          #["Docentes 2013 a 2016" , "35eab2f8-5a64-4619-b3f1-63a2e6690cfa", "2015", "75eea9d5-1542-4cfd-8ed9-d540d3eef344", "br-capes-colsucup-docente-2013a2016-2017-12-02_2015.csv", False],
          #["Docentes 2013 a 2016" , "35eab2f8-5a64-4619-b3f1-63a2e6690cfa", "2016", "922bc0d1-90eb-4939-9167-03831f732f72", "br-capes-colsucup-docente-2013a2016-2017-12-02_2016.csv", False],
          #["Docentes 2017"        , "57f86b23-e751-4834-8537-e9d33bd608b6", "2017", "d918d02e-7180-4c7c-be73-980f9a8c09b5", "br-capes-colsucup-docente-2017-2018-08-10.csv", False],
-         #["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2013", "7de14e9c-9739-43d9-8217-ba9bf837b411", "br-capes-colsucup-prog-2013a2016-2017-12-02_2013.csv", False],
-         #["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2014", "a0c1760a-4130-49b7-b1fd-849ca189417b", "br-capes-colsucup-prog-2013a2016-2017-12-02_2014.csv", False],
-table =  [["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2015", "3c16cfcf-0614-4497-a3d4-324c0788fe2e", "br-capes-colsucup-prog-2013a2016-2017-12-02_2015.csv", False],
+table = [["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2013", "7de14e9c-9739-43d9-8217-ba9bf837b411", "br-capes-colsucup-prog-2013a2016-2017-12-02_2013.csv", False],
+         ["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2014", "a0c1760a-4130-49b7-b1fd-849ca189417b", "br-capes-colsucup-prog-2013a2016-2017-12-02_2014.csv", False],
+         ["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2015", "3c16cfcf-0614-4497-a3d4-324c0788fe2e", "br-capes-colsucup-prog-2013a2016-2017-12-02_2015.csv", False],
          ["Programas 2013 a 2016", "122620f6-47dc-4363-9d63-130c8a386af6", "2016", "bc2fb7a9-8313-4959-abee-14764d812e8b", "br-capes-colsucup-prog-2013a2016-2017-12-02_2016.csv", False],
          ["Programas 2017"       , "903b4215-ea91-4927-8975-d1484891374f", "2017", "8b3464e2-9108-4855-bc5b-2df474fdf152", "br-capes-colsucup-prog-2017-2018-08-01.csv", False]]
 

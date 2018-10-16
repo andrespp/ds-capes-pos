@@ -4,13 +4,13 @@
 set -e
 
 datasrc() {
-	echo Retrieving datasrc, may take a while $@
+	echo Retrieving datasrc This may take a while. $@
 	python extract.py
 }
 
 dataset() {
-	echo Build dataset $@
-	python etl.py
+	echo Building dataset. $@
+	python load.py
 }
 
 seed() {

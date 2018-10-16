@@ -7,9 +7,11 @@ setup: docker-compose.yml etl/Dockerfile analysis/Dockerfile
 	docker-compose pull
 	docker-compose build
 
-datasrc: datasrc/MD5SUMS etl/extract.py
+.PHONY: datasrc
+datasrc: etl/extract.py
 	docker-compose run etl datasrc
 
+.PHONY: dataset
 dataset: etl/load.py
 	docker-compose run etl dataset
 

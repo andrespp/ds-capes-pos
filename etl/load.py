@@ -23,6 +23,35 @@ dataset_table = [
  ["programas", "br-capes-programas.parquet"]]
 ds_df = pd.DataFrame(dataset_table, columns='dataset filename'.split())
 
+programas_columns = ['CD_PROGRAMA_IES',
+                    'AN_BASE',
+                    'NM_GRANDE_AREA_CONHECIMENTO',
+                    'NM_AREA_CONHECIMENTO',
+                    'NM_SUBAREA_CONHECIMENTO',
+                    'NM_ESPECIALIDADE',
+                    'CD_AREA_AVALIACAO',
+                    'NM_AREA_AVALIACAO',
+                    'SG_ENTIDADE_ENSINO',
+                    'NM_ENTIDADE_ENSINO',
+                    'CS_STATUS_JURIDICO',
+                    'DS_DEPENDENCIA_ADMINISTRATIVA',
+                    'DS_ORGANIZACAO_ACADEMICA',
+                    'NM_REGIAO',
+                    'NM_MUNICIPIO_PROGRAMA_IES',
+                    'SG_UF_PROGRAMA',
+                    'NM_GRAU_PROGRAMA',
+                    'CD_CONCEITO_PROGRAMA',
+                    'ANO_INICIO_PROGRAMA',
+                    'AN_INICIO_CURSO',
+                    'IN_REDE',
+                    'SG_ENTIDADE_ENSINO_REDE',
+                    'DS_SITUACAO_PROGRAMA',
+                    'DT_SITUACAO_PROGRAMA',
+                    'ID_ADD_FOTO_PROGRAMA_IES',
+                    'ID_ADD_FOTO_PROGRAMA',
+                    'NM_PROGRAMA_IDIOMA']
+
+
 ## Functions
 def read_datasrc(filename, sep=';', encoding='iso-8859-1', index_col=17,
                     columns=False):
@@ -56,15 +85,19 @@ for i in ds_df['dataset']:
     print('Reading "{}" CSV files.'.format(i))
 
     # Empty with columns dataframe
-    df = read_datasrc(datasrc_home + '/' + \
+    if i == 'programas':
+        df = pd.DataFrame(columns=programas_columns)
+    else:
+        df = read_datasrc(datasrc_home + '/' + \
                  src_df[src_df['dataset'] == i].iloc[0]['srcfile'],\
                  columns=True)
 
     if isinstance(df, pd.DataFrame):
         # Read CVS files
         for j in src_df[src_df['dataset'] == i]['srcfile']:
-            df = df.append(read_datasrc(datasrc_home + '/' + j),\
-                                            ignore_index=True)
+            df1 = read_datasrc(datasrc_home + '/' + j)
+            df  = pd.concat([df,df1], join='inner', ignore_index=True)
+
         # Write parquet file
         pq_fname = dataset_home + '/' + \
               ds_df[ds_df['dataset'] == i].iloc[0]['filename']

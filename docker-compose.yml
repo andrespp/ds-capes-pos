@@ -11,8 +11,8 @@ services:
     volumes:
        - ./analysis:/home/jovyan/analysis
        - ./etl:/home/jovyan/etl
-       - ./datasrc:/home/jovyan/etl/datasrc
-       - ./dataset:/home/jovyan/etl/dataset
+       - ./datasrc:/home/jovyan/datasrc
+       - ./dataset:/home/jovyan/dataset
     environment:
       JUPYTER_LAB_ENABLE: "yes"
 

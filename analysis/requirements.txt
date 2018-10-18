@@ -1,4 +1,3 @@
 psycopg2
 ipython-sql
-pyarrow
 fastparquet

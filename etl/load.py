@@ -1,6 +1,6 @@
 # coding: utf-8
-import pyarrow as pa
-import pyarrow.parquet as pq
+from fastparquet import ParquetFile
+from fastparquet import write
 import pandas as pd
 
 ## Definitions
@@ -53,7 +53,7 @@ programas_columns = ['CD_PROGRAMA_IES',
 
 
 ## Functions
-def read_datasrc(filename, sep=';', encoding='iso-8859-1', index_col=17,
+def read_datasrc(filename, sep=';', encoding='utf8', index_col=17,
                     columns=False):
     """
        Read csv source file and return a pandas dataframe with its contents. If
@@ -101,7 +101,8 @@ for i in ds_df['dataset']:
         # Write parquet file
         pq_fname = dataset_home + '/' + \
               ds_df[ds_df['dataset'] == i].iloc[0]['filename']
-        pq.write_table(pa.Table.from_pandas(df), pq_fname, compression='GZIP')
+        write(pq_fname, df, compression='GZIP')
+        print('{} written.'.format(pq_fname))
 
     else:
         print('WARN: "{}" parquet file will not be written.'.format\

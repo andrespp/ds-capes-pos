@@ -14,7 +14,7 @@ Em particular, os seguintes conjuntos de dados são considerados:
 * [Informações de programas de pós-graduação](https://dadosabertos.capes.gov.br/organization/a994a478-5aaf-4e09-8372-134a0af7c0e8?groups=programas-pos-graduacao)
 * [Docentes por programa](https://dadosabertos.capes.gov.br/organization/a994a478-5aaf-4e09-8372-134a0af7c0e8?groups=docentes)
 * [Discentes matriculados e titulados](https://dadosabertos.capes.gov.br/organization/a994a478-5aaf-4e09-8372-134a0af7c0e8?groups=avaliacao-da-pos-graduacao)
-* [Produção Intelectual Bibliográfica ](https://dadosabertos.capes.gov.br/dataset/detalhes-da-producao-intelectual-bibliografica-2013a2016)
+* [Produção Intelectual Bibliográfica ](https://dadosabertos.capes.gov.br/organization/a994a478-5aaf-4e09-8372-134a0af7c0e8?groups=producao-intelectual-da-pos-graduacao)
 
 ## Conteúdo
 
@@ -41,6 +41,10 @@ Os _datasets_ utilizados neste repositório são os seguintes:
 | 17	| Artigo em Jornal ou Revista	| 2013 a 2016 | [link][17] | [link][171] |
 | 18	| Artigo em Periódico	| 2013 a 2016 | [link][18] | [link][181] |
 | 19	| Livro			| 2014 a 2016 | [link][19] | [link][191] |
+| 20	| Trabalhos em Anais	| 2017 | [link][20] | [link][201] |
+| 21	| Artigo em Jornal ou Revista	| 2017 | [link][21] | [link][211] |
+| 22	| Artigo em Periódico	| 2017 | n/d | n/d |
+| 23	| Livro			| 2017 | [link][23] | [link][231] |
 
 
 ## Configuração do Ambiente
@@ -82,7 +86,7 @@ $ docker-compose up
 
 ## References
 
-* [Protal dados abertos - Capes](https://dadosabertos.capes.gov.br/)
+* [Portal dados abertos - Capes](https://dadosabertos.capes.gov.br/)
 
 [p1]: https://dadosabertos.capes.gov.br/dataset/coleta-de-dados-programas-da-pos-graduacao-stricto-sensu-no-brasil-2017/resource/8b3464e2-9108-4855-bc5b-2df474fdf152
 [p2]: https://dadosabertos.capes.gov.br/dataset/programas-da-pos-graduacao-stricto-census-do-brasil-de-2013-a-2015/resource/7de14e9c-9739-43d9-8217-ba9bf837b411
@@ -103,6 +107,12 @@ $ docker-compose up
 [17]: https://dadosabertos.capes.gov.br/dataset/detalhes-da-producao-intelectual-bibliografica-2013a2016/resource/414b51bf-bbd8-4d6d-b1bb-ab5867167949
 [18]: https://dadosabertos.capes.gov.br/dataset/detalhes-da-producao-intelectual-bibliografica-2013a2016/resource/e2c8a0e7-c473-467b-868f-f42d3c54aadd
 [19]: https://dadosabertos.capes.gov.br/dataset/detalhes-da-producao-intelectual-bibliografica-2013a2016/resource/8d368433-8ab5-4a78-8f55-a7384d7dff18
+[20]: https://dadosabertos.capes.gov.br/dataset/coleta-de-dados-producao-intelectual-de-programas-de-pos-graduacao-stricto-sensu-no-brasil-de-2017/resource/b93739f0-0bcd-48c7-ae8a-78ae417656c7
+[201]: https://dadosabertos.capes.gov.br/dataset/a93eaa05-5787-46ea-9997-fd970b718a41/resource/b93739f0-0bcd-48c7-ae8a-78ae417656c7/download/br-capes-colsucup-producao-2017a2018-2018-08-20-bibliografica-anais.csv
+[21]: https://dadosabertos.capes.gov.br/dataset/coleta-de-dados-producao-intelectual-de-programas-de-pos-graduacao-stricto-sensu-no-brasil-de-2017/resource/04a8c9bb-a123-4b4c-92dd-c242d67c9e5f
+[211]: https://dadosabertos.capes.gov.br/dataset/a93eaa05-5787-46ea-9997-fd970b718a41/resource/04a8c9bb-a123-4b4c-92dd-c242d67c9e5f/download/br-capes-colsucup-producao-2017a2018-2018-08-20-bibliografica-artjr.csv
+[23]: https://dadosabertos.capes.gov.br/dataset/coleta-de-dados-producao-intelectual-de-programas-de-pos-graduacao-stricto-sensu-no-brasil-de-2017/resource/da052cbe-64d6-41fd-a1b0-9ad555d10d61
+[231]: https://dadosabertos.capes.gov.br/dataset/a93eaa05-5787-46ea-9997-fd970b718a41/resource/da052cbe-64d6-41fd-a1b0-9ad555d10d61/download/br-capes-colsucup-producao-2017a2018-2018-08-20-bibliografica-livro.csv
 [p110]: https://dadosabertos.capes.gov.br/dataset/903b4215-ea91-4927-8975-d1484891374f/resource/8b3464e2-9108-4855-bc5b-2df474fdf152/download/br-capes-colsucup-prog-2017-2018-08-01.csv
 [p21]: https://dadosabertos.capes.gov.br/dataset/122620f6-47dc-4363-9d63-130c8a386af6/resource/7de14e9c-9739-43d9-8217-ba9bf837b411/download/br-capes-colsucup-prog-2013a2016-2017-12-02_2013.csv
 [p31]: https://dadosabertos.capes.gov.br/dataset/122620f6-47dc-4363-9d63-130c8a386af6/resource/a0c1760a-4130-49b7-b1fd-849ca189417b/download/br-capes-colsucup-prog-2013a2016-2017-12-02_2014.csv

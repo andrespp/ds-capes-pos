@@ -125,12 +125,6 @@ print("Need to download {} datasets.".format(len(to_retrieve)))
 for i in df[df['download'] == True].index:
     print('Retriveing "{}". '.format(df['filename'][i]), end="")
 
-    #resource_df = pd.read_csv(df['url'][i], index_col=17, sep=';', \
-    #                            encoding='iso-8859-1')
-    #resource_df.to_csv(str(datasrc_home + "/" + df['lfilename'][i]), sep=';', \
-    #                        compression='gzip')
-    #urllib.request.urlretrieve(url, '/Users/scott/Downloads/cat.jpg')
-
     csv_url = df['url'][i]
     csv_lfilename = datasrc_home + "/" + df['lfilename'][i]
     csv_lfilename_gz = datasrc_home + "/" + df['lfilename_gz'][i]

@@ -9,6 +9,7 @@ help:
 	@echo "  datasrc\tAttempt to download CSV source files"
 	@echo "  dataset\tGenerate parquet files from CSV sources"
 	@echo "  seed\t\tDownload CSV files and generate parquet files at once"
+	@echo "  run-etl\tRun a shell inside a new ETL container"
 
 .PHONY: test
 test:
@@ -32,3 +33,7 @@ dataset: etl/load.py
 seed:
 	make datasrc
 	make dataset
+
+.PHONY: run-etl
+run-etl:
+	docker-compose run -u $$(id -u) --rm etl bash

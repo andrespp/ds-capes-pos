@@ -23,11 +23,11 @@ setup: docker-compose.yml etl/Dockerfile analysis/Dockerfile
 
 .PHONY: datasrc
 datasrc: etl/extract.py
-	docker-compose run --rm etl datasrc
+	docker-compose run -u $$(id -u) --rm etl datasrc
 
 .PHONY: dataset
 dataset: etl/load.py
-	docker-compose run --rm etl dataset
+	docker-compose run -u $$(id -u) --rm etl dataset
 
 seed:
 	make datasrc
